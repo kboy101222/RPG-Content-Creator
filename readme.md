@@ -21,7 +21,7 @@ The following are **planned** (in order of planned implementation):
 
 (Content creators for other systems such as D&D 3.5 are not yet planned due to my unfamiliarity with the system)
 
-For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable into the ["Fifth Edition Character Sheet" app](https://play.google.com/store/apps/details?id=com.wgkammerer.testgui.basiccharactersheet.app), and all D&D 5e creators will be exportable into the ["Complete Reference for DnD 5" app](https://play.google.com/store/apps/details?id=com.vansteinengroentjes.apps.ddfive)
+For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable into the ["Fifth Edition Character Sheet" app](https://play.google.com/store/apps/details?id=com.wgkammerer.testgui.basiccharactersheet.app) [(iOS Link)](https://itunes.apple.com/us/app/fifth-edition-character-sheet/id967650851?mt=8), and all D&D 5e creators will be exportable into the ["Complete Reference for DnD 5" app](https://play.google.com/store/apps/details?id=com.vansteinengroentjes.apps.ddfive) [(iOS Link)](https://itunes.apple.com/us/app/complete-reference-for-d-d-5/id1225927257?mt=8)
 
 ## Notice
 
