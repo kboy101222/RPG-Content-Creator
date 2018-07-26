@@ -1,3 +1,35 @@
-## D&D 5e Homebrew Content Creator and Exporter
+# RPG Content Creator
 
-The 
+The RPG Content Creator is an Open Source website for creating and editting Homebrew content for various RPG systems.
+
+For now, only Fifth Edition Dungeons and Dragons is supported, but support for other systems is planned for the future.
+
+The following custom content creators are **complete**:
+
+* None
+
+The following are in **beta stages**:
+
+* Item Creator (D&D 5e)
+* Class Creator (D&D 5e)
+
+The following are **planned** (in order of planned implementation):
+
+* Archetypes (D&D 5e)
+* Races (D&D 5e)
+* Sub Races (D&D 5e)
+
+(Content creators for other systems such as D&D 3.5 are not yet planned due to my unfamiliarity with the system)
+
+For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable into the ["Fifth Edition Character Sheet" app](https://play.google.com/store/apps/details?id=com.wgkammerer.testgui.basiccharactersheet.app), and all D&D 5e creators will be exportable into the ["Complete Reference for DnD 5" app](https://play.google.com/store/apps/details?id=com.vansteinengroentjes.apps.ddfive)
+
+## Notice
+
+This project is 100% open source and free to use and distribute, so long as you give credit to me, Kyle George, and don't charge money for it.
+
+## Additional Software Used:
+
+* Brackets
+* jquery
+* Bootstrap 4
+* Cookies.js
