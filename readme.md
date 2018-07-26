@@ -30,6 +30,14 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
 * Support additional RPG systems
 * Importing and exporting custom content so it can be modified by others
 
+## Current TODO List (in no particular order)
+
+* Add exporting items to "Complete Refernece for DnD 5" app
+* Add all the level up effects for classes
+* Add disability support
+    * Screen readers, colorblind modes, etc
+    * This will probably be done late since I've never done it before
+
 ## Notice
 
 This project is Open Source and free to use, modify, and distribute, so long as you give credit to me, Kyle George, and don't charge money for it.
