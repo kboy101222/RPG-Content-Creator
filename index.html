@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/domtoimage.js"></script>
+
+    <title>Content Builder for D&D 5e</title>
+</head>
+
+<body>
+    <!-- New Creation Menu -->
+    <ul class="nav nav-pills">
+        <li class="nav-item dropdown">
+            <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--Create a New...-->
+            <!--</button>-->
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Create a New...</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#newItemCreator">Item</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#newClassCreator">Class</a>
+                <a class="dropdown-item disabled" href="#">Race (WIP)</a>
+                <a class="dropdown-item disabled" href="#">Archetype (WIP)</a>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Class Creation Wizard -->
+    <div class="modal fade" id="newClassCreator" tabindex="-1" role="dialog" aria-labelledby="ClassCreationWizard" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classCreatorTitle">Class Creator</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form id="classCreationForm">
+                        <div class="formGroup">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="className">Class Name</label>
+                                    <input type="text" class="form-control" placeholder="Class Name" name="displayname" id="className">
+                                </div>
+                                <div class="col">
+                                    <label for="classID">Class ID</label>
+                                    <input type="text" class="form-control" placeholder="Class ID" name="name" id="classID">
+                                    <small id="idHelp" class="form-text text-muted">This must be unique!</small>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    <label for="hitDie">Hit Die</label>
+                                    <!--                                <input type="number" class="form-control" id="hitDie" name="hitDie" placeholder="Hit Die" max="20" min="4">-->
+                                    <select name="hitdie" id="" class="form-control">
+                                   <option value="4">d4</option>
+                                   <option value="6">d6</option>
+                                   <option value="8">d8</option>
+                                   <option value="10">d10</option>
+                                   <option value="12">d12</option>
+                                   <option value="20">d20</option>
+                               </select>
+                                </div>
+                                <div class="col form-group">
+                                    <label for="skillSelections">Skill Selections</label>
+                                    <input type="number" class="form-control" id="skillSelections" name="skillcount" placeholder="Skill Selections" min="1" max="18">
+                                    <small id="skillHelp" class="form-text text-muted">How many skills you can pick when making a character</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <label for="selectSkills">Available Skills</label>
+                            <div class="form-row" id="selectSkills">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="acrobatics" class="form-check-input" id="acrobatics">
+                                        <label for="acrobatics" class="form-check-label">Acrobatics</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="athletics" class="form-check-input" id="athletics">
+                                        <label for="athletics" class="form-check-label">Athletics</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="insight" class="form-check-input" id="insight">
+                                        <label for="insight" class="form-check-label">Insight</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="insight" class="form-check-input" id="medicine">
+                                        <label for="medicine" class="form-check-label">Medicine</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="performance" class="form-check-input" id="performance">
+                                        <label for="performance" class="form-check-label">Performance</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="slieghtofhand" class="form-check-input" id="sleightofhand">
+                                        <label for="sleightofhand" class="form-check-label">Slieght of Hand</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="animalhandling" class="form-check-input" id="animalHandling">
+                                        <label for="animalHandling" class="form-check-label">Animal Handling</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="deception" class="form-check-input" id="deception">
+                                        <label for="deception" class="form-check-label">Deception</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="intimidation" class="form-check-input" id="intimidation">
+                                        <label for="intimidation" class="form-check-label">Intimidation</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="nature" class="form-check-input" id="nature">
+                                        <label for="nature" class="form-check-label">Nature</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="persuasion" class="form-check-input" id="persuasion">
+                                        <label for="persuasion" class="form-check-label">Persuasion</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="stealth" class="form-check-input" id="stealth">
+                                        <label for="stealth" class="form-check-label">Stealth</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="arcana" class="form-check-input" id="arcana">
+                                        <label for="arcana" class="form-check-label">Arcana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="history" class="form-check-input" id="history">
+                                        <label for="history" class="form-check-label">History</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="investigation" class="form-check-input" id="investigation">
+                                        <label for="investigation" class="form-check-label">Investigation</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="perception" class="form-check-input" id="perception">
+                                        <label for="perception" class="form-check-label">Perception</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="religion" class="form-check-input" id="religion">
+                                        <label for="religion" class="form-check-label">Religion</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="classskills" value="survival" class="form-check-input" id="survival">
+                                        <label for="survival" class="form-check-label">Survival</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <small class="form-check text-muted">Skills available to take at level 1</small>
+                            <hr>
+                            <label for="saveproficiencies">Save Proficiencies</label>
+                            <div class="form-row" id="saveproficiencies">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="strength" class="form-check-input">
+                                        <label for="strength" class="form-check-label">Strength</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="intelligence" class="form-check-input">
+                                        <label for="intelligence" class="form-check-label">Intelligence</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="dexterity" class="form-check-input">
+                                        <label for="dexterity" class="form-check-label">Dexterity</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="wisdom" class="form-check-input">
+                                        <label for="wisdom" class="form-check-label">Wisdom</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="constitution" class="form-check-input">
+                                        <label for="constitution" class="form-check-label">Constitution</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" name="saveproficiencies" value="charisma" class="form-check-input">
+                                        <label for="charisma" class="form-check-label">Charisma</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <label for="armorproficiencies">Armor Proficienies</label>
+                            <div class="form-row" id="armorproficiencies">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="Light Armor" id="armor1" class="form-check-input">
+                                        <label for="armor1" class="form-check-label">Light Armor</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="Medium Armor" id="armor2" class="form-check-input">
+                                        <label for="armor2" class="form-check-label">Medium Armor</label>
+                                    </div>
+                                    <div class="form-check"><input type="checkbox" name="Special Rules" id="armorspecial" class="form-check-input"><label for="armorspecial" class="form-check-label">Special Rules</label></div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="Heavy Armor" id="armor3" class="form-check-input">
+                                        <label for="armor3" class="form-check-label">Heavy Armor</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="Shields" id="armor4" class="form-check-input">
+                                        <label for="armor4" class="form-check-label">Shields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" tpye="text" id="armorspecialrules" class="form-control">
+                                <small class="form-text text-muted">For situations such as Druids being unable to wear metal armor</small>
+                            </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="createNewClass">Save changes</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Item Creation Wizard -->
+    <div class="modal fade" id="newItemCreator" tabindex="-1" role="dialog" aria-labelledby="ItemCreationWizard" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="itemCreatorTitle">Item Creator v0.2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form id="itemCreationForm">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="itemName">Name</label>
+                                    <input type="text" name="itemName" class="form-control" placeholder="Name" id="itemName" autocomplete="off" rows="5">
+                                    <small class="form-text text-muted">This must be unique!</small>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="itemImage">Item Image Link</label>
+                                    <input name="itemImage" type="text" class="form-control" id="itemImage" placeholder="Item Image Link">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="itemCost">Cost</label>
+                                    <input name="itemCost" placeholder="Cost" type="number" id="itemCost" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="coinType">Coin</label>
+                                    <select name="coinType" class="form-control" id="coinType">
+                                    <option value="cp">Copper</option>
+                                    <option value="sp">Silver</option>
+                                    <option value="ep">Electrum</option>
+                                    <option value="gp">Gold</option>
+                                    <option value="pp">Platinum</option>
+                                </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="itemWeight">Weight</label>
+                                    <input name="itemWeight" placeholder="Weight" type="number" id="itemWeight" class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="itemRarity">Rarity</label>
+                                    <div class="form-group">
+                                        <select name="itemRarity" class="form-control" id="itemRarity">
+                                        <option value="Common">Common</option>
+                                        <option value="Uncommon">Uncommon</option>
+                                        <option value="Rare">Rare</option>
+                                        <option value="Very Rare">Very Rare</option>
+                                        <option value="Legendary">Legendary</option>
+                                        <option value="Artifact">Artifact</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="itemType">Type</label>
+                                    <select name="itemType" class="form-control" id="itemType">
+                                    <option value="mundane">Mundane Item</option>
+                                    <option value="magic">Magical Item</option>
+                                    <option value="weapon">Weapon</option>
+                                    <option value="armor">Armor</option>
+                                </select>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div id="mundaneTypeCreator">
+                                <p class="text-muted">Nothing to edit here</p>
+                            </div>
+
+                            <div id="itemTypeCreator">
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label for="itemTypeSelect">Item Type</label>
+                                        <select name="itemTypeSelect" class="form-control" id="itemTypeSelect">
+                                        <option value="Wondrous Item">Wondrous Item</option>
+                                        <option value="Staff">Staff</option>
+                                        <option value="Ring">Ring</option>
+                                        <option value="Rod">Rod</option>
+                                        <option value="Wand">Wand</option>
+                                        <option value="Potion">Potion</option>
+                                        <option value="Scroll">Scroll</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="weaponTypeCreator">
+                                <div class="form-row" id="weaponData">
+                                    <div class="col-md-3">
+                                        <label for="weaponAbil">Ability</label>
+                                        <select name="weaponAbil" class="form-control" id="weaponAbil">
+                                        <option value="Strength">Strength</option>
+                                        <option value="Dexterity">Dexterity</option>
+                                        <option value="Constitution">Constitution</option>
+                                        <option value="Intelligence">Intelligence</option>
+                                        <option value="Wisdom">Wisdom</option>
+                                        <option value="Charisma">Charisma</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="numDice"># of Dice</label>
+                                        <input name="numDice" type="number" class="form-control" id="numDice" value="1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="weaponDie">Weapon Die</label>
+                                        <select name="weaponDie" id="weaponDie" class="form-control">
+                                        <option value="d4">d4</option>
+                                        <option value="d6">d6</option>
+                                        <option value="d8">d8</option>
+                                        <option value="d10">d10</option>
+                                        <option value="d12">d12</option>
+                                        <option value="d20">d20</option>
+                                        <option value="d100">d100</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="weaponDmgType">Damage Type</label>
+                                        <select name="weaponDmgType" id="weaponDmgType" class="form-control">
+                                        <option value="bludgeoning">Bludgeoning</option>
+                                        <option value="piercing">Piercing</option>
+                                        <option value="slashing">Slashing</option>
+                                        <option value="acid">Acid</option>
+                                        <option value="cold">Cold</option>
+                                        <option value="fire">Fire</option>
+                                        <option value="force">Force</option>
+                                        <option value="lightning">Lightning</option>
+                                        <option value="necrotic">Necrotic</option>
+                                        <option value="poison">Poison</option>
+                                        <option value="psychic">Psychic</option>
+                                        <option value="radiant">Radiant</option>
+                                        <option value="thunder">Thunder</option>
+                                        <option value="none">No Damage</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="armorTypeCreator">
+                                <div class="form-row">
+                                    <div class="col-md-3">
+                                        <label for="armorType">Type</label>
+                                        <select id="armorType" name="armorType" class="form-control">
+                                        <option value="Light Armor">Light Armor</option>
+                                        <option value="Medium Armor">Medium Armor</option>
+                                        <option value="Heavy Armor">Heavy Armor</option>
+                                        <option value="Shield">Shield</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="armorClass">Armor Class</label>
+                                        <input id="armorClass" type="number" class="form-control" name="armorClass" value="10">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="dexMod">Dexterity Modifier</label>
+                                        <select name="armorDexMod" id="dexMod" class="form-control">
+                                        <option value="fullModifier">Full</option>
+                                        <option value="max2">Max 2</option>
+                                        <option value="noMod">No Modifier</option>
+                                    </select>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="strengthReq">Strength Requirement</label><br>
+                                        <input type="number" min="0" id="strengthReq" name="strengthreq" class="form-control" value="0">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="stealthDAdv" class="form-check-input" name="stealthdisadvantage">
+                                        <label for="stealthDAdv" class="form-check-label">Disadvantage on Stealth</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <label for="itemDescription">Description</label>
+                            <textarea class="form-control" id="itemDescription" name="description" placeholder="Item Description"></textarea>
+
+                            <hr>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="attunement" id="attunement">
+                                        <label class="form-check-label" for="attunement">Attunement Required</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="attunementDesc">Attunement Description</label>
+                                    <input type="text" name="attunementDesc" class="form-control" id="attunementDesc" placeholder="Attunement Description">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="defaultAttunement">
+                                    <label for="defaultAttunement" class="form-check-label">Default Attunement</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="createNewItem">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="font-weight-bold">Items:</p><br>
+    <div class="card-columns" id="itemCards">
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/Cookies.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
