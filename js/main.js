@@ -119,96 +119,6 @@ $(document).ready(function () {
 
     $('select[name="itemType"]').change(function () {
         console.log("Item Type changed to " + this.value);
-//        if (this.value === 'magic') {
-//            // Hides all content from other Item Creators
-//            $('#weaponTypeCreator').hide();
-//            $('#armorTypeCreator').hide();
-//            $('#mundaneTypeCreator').hide();
-//            // Enables Item Rarity if it has been disabled by Mundane Item Creator
-//            $('#itemRarity').prop('disabled', false);
-//            // Enables form objects for Magic Item Creation
-//            $('#itemTypeSelect').prop('disabled', false);
-//            // Disables form objects for Weapon Creation
-//            $('#weaponAbil').prop('disabled', true);
-//            $('#numDice').prop('disabled', true);
-//            $('#weaponDie').prop('disabled', true);
-//            $('#weaponDmgType').prop('disabled', true);
-//            // Disables for objects for Armor Creation
-//            $('#armorType').prop('disabled', true);
-//            $('#armorClass').prop('disabled', true);
-//            $('#dexMod').prop('disabled', true);
-//            $('#strengthReq').prop('disabled', true);
-//            $('#stealthDAdv').prop('disabled', true);
-//            // Shows the Magic Item Creator
-//            $('#itemTypeCreator').show();
-//        }
-//        else if (this.value === 'mundane') {
-//            // Hides all content from other Item Creators
-//            $('#weaponTypeCreator').hide();
-//            $('#armorTypeCreator').hide();
-//            $('#itemTypeCreator').hide();
-//            // Disables Item Rarity since it is irrelevant to Mundane Items
-//            $('#itemRarity').prop('disabled', true);
-//            // Disables form objects for Magic Item Creation
-//            $('#itemTypeSelect').prop('disabled', true);
-//            // Disables form objects for Weapon Creation
-//            $('#weaponAbil').prop('disabled', true);
-//            $('#numDice').prop('disabled', true);
-//            $('#weaponDie').prop('disabled', true);
-//            $('#weaponDmgType').prop('disabled', true);
-//            //Disables for objects for Armor Creation
-//            $('#armorType').prop('disabled', true);
-//            $('#armorClass').prop('disabled', true);
-//            $('#dexMod').prop('disabled', true);
-//            $('#strengthReq').prop('disabled', true);
-//            $('#stealthDAdv').prop('disabled', true);
-//            // Shows Mundane Item Creator
-//            $('#mundaneTypeCreator').show();
-//        }
-//        else if (this.value === 'weapon') {
-//            $('#itemTypeCreator').hide();
-//            $('#armorTypeCreator').hide();
-//            $('#mundaneTypeCreator').hide();
-//            // Enables Item Rarity if it has been disabled by Mundane Item Creator
-//            $('#itemRarity').prop('disabled', false);
-//            // Disables form objects for Magic Item Creation
-//            $('#itemTypeSelect').prop('disabled', true);
-//            //Disables for objects for Armor Creation
-//            $('#armorType').prop('disabled', true);
-//            $('#armorClass').prop('disabled', true);
-//            $('#dexMod').prop('disabled', true);
-//            $('#strengthReq').prop('disabled', true);
-//            $('#stealthDAdv').prop('disabled', true);
-//            // Enables form objects for Weapon Creation
-//            $('#weaponAbil').prop('disabled', false);
-//            $('#numDice').prop('disabled', false);
-//            $('#weaponDie').prop('disabled', false);
-//            $('#weaponDmgType').prop('disabled', false);
-//            // Shows Weapon Creator
-//            $('#weaponTypeCreator').show();
-//        }
-//        else if (this.value === 'armor') {
-//            $('#weaponTypeCreator').hide();
-//            $('#itemTypeCreator').hide();
-//            $('#mundaneTypeCreator').hide();
-//            // Enables Item Rarity if it has been disabled by Mundane Item Creator
-//            $('#itemRarity').prop('disabled', false);
-//            // Disables form objects for Magic Item Creation
-//            $('#itemTypeSelect').prop('disabled', true);
-//            // Disables form objects for Weapon Creation
-//            $('#weaponAbil').prop('disabled', true);
-//            $('#numDice').prop('disabled', true);
-//            $('#weaponDie').prop('disabled', true);
-//            $('#weaponDmgType').prop('disabled', true);
-//            // Enables for objects for Armor Creation
-//            $('#armorType').prop('disabled', false);
-//            $('#armorClass').prop('disabled', false);
-//            $('#dexMod').prop('disabled', false);
-//            $('#strengthReq').prop('disabled', false);
-//            $('#stealthDAdv').prop('disabled', false);
-//            //Shows Armor Creator
-//            $('#armorTypeCreator').show();
-//        }
         setShownFields(this.value);
     });
 
@@ -266,13 +176,14 @@ $(document).ready(function () {
             cardHTML += value.itemName + '</h5>';
 
             switch (value.itemType) {
+                // TODO: Implement previews for all item types
                 case "mundane":
                     cardHTML += '<div class="row"><div class="col-6">Cost: ' + value.itemCost + value.coinType + '</div><div class="col-6"> Weight: ' + value.itemWeight + weightSuufix + '</div></div>';
                     cardHTML += '<p class="card-text">' + value.description + '</p>';
                     break;
             }
 
-            cardHTML += '<div class="btn-group" role="group"><button class="btn btn-primary" action="get-item-image" itemID="' + item + '">Get Image</button><button class="btn btn-primary" action="edit-item" itemID="' + item + '">Edit</button></div>';
+            cardHTML += '<div class="btn-group" role="group"><button class="btn btn-info" action="get-item-image" itemID="' + item + '">Get Image</button><button class="btn btn-info" action="edit-item" itemID="' + item + '">Edit</button><button class="btn btn-info" action="export-item" itemid="' + item + '">Export</button></div>';
             cardHTML += '</div></div>';
 
             console.log("ItemID: " + item);
