@@ -183,7 +183,7 @@ $(document).ready(function () {
                     break;
             }
 
-            cardHTML += '<div class="btn-group" role="group"><button class="btn btn-info" action="get-item-image" itemID="' + item + '">Get Image</button><button class="btn btn-info" action="edit-item" itemID="' + item + '">Edit</button><button class="btn btn-info" action="export-item" itemid="' + item + '">Export</button></div>';
+            cardHTML += '<div class="btn-group" role="group"><button class="btn text-dark btn-info font-weight-bold" action="get-item-image" itemID="' + item + '">Get Image</button><button class="btn text-dark btn-info font-weight-bold" action="edit-item" itemID="' + item + '">Edit</button><button class="btn text-dark btn-info font-weight-bold" action="export-item" itemid="' + item + '">Export</button></div>';
             cardHTML += '</div></div>';
 
             console.log("ItemID: " + item);
