@@ -40,7 +40,7 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
 
 ## Notice
 
-This project is Open Source and free to use, modify, and distribute, so long as you give credit to me, Kyle George, and don't charge money for it.
+This project is Open Source and free to use, modify, and distribute, so long as you give credit to me, Kyle George, and as long as you don't charge money for it.
 
 ## Additional Software Used:
 
