@@ -259,6 +259,18 @@ $(document).ready(function () {
             }
         });
     });
+
+    $("#toggle-theme").change(function() {
+//        console.log("Theme Changed!");
+
+        if ($('#toggle-theme').prop('checked')) {
+            $('head').append('<link rel="stylesheet" href="./css/bootstrap-darkly.css" type="text/css" theme="dark" />');
+//            console.log("Changed theme to DARK");
+        } else {
+            $('[theme="dark"]').remove();
+//            console.log("Changed theme to LIGHT");
+        }
+    });
 });
 
 $('[action="get-item-image"]').on("click", function () {

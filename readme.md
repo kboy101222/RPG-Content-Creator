@@ -38,3 +38,4 @@ This project is Open Source and free to use, modify, and distribute, so long as 
 * jquery (For making a lot of the coding easier)
 * Bootstrap 4 (Because I'm a terrible graphical designer)
 * Cookies.js (Because it makes Cookies easier, which I need because I can't afford a server)
+* TiTaToggle (For fancy toggle switches)
