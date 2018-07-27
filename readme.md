@@ -38,7 +38,7 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
     * Screen readers, colorblind modes, etc
     * This will probably be done late since I've never done it before
 * Dark Theme
-    * ~~Able to toggle between light and dark themes~~
+    * ~~Able to toggle between light and dark themes~~ Done!
     * Keep track of the chosen theme between reloads
     * More themes (?)
 
