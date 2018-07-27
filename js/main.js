@@ -183,7 +183,15 @@ $(document).ready(function () {
                     break;
             }
 
-            cardHTML += '<div class="btn-group" role="group"><button class="btn text-dark btn-info font-weight-bold" action="get-item-image" itemID="' + item + '">Get Image</button><button class="btn text-dark btn-info font-weight-bold" action="edit-item" itemID="' + item + '">Edit</button><button class="btn text-dark btn-info font-weight-bold" action="export-item" itemid="' + item + '">Export</button></div>';
+            cardHTML += '<div class="btn-group" role="group">' +
+                            '<button class="btn text-dark btn-info font-weight-bold" action="edit-item" itemID="' + item + '">Edit</button>' +
+                            '<button class="btn text-dark btn-info font-weight-bold" action="export-item-popup" itemID="' + item + '">Export</button>'+
+                // TODO: Make this a dropdown with the option to export to different targets
+                // action="export-item" itemid="' + item + ' export="___"
+                // Valid export targets:
+                //      Complete Reference for DnD 5 = reference
+                //      Fifth Edition Character Sheet = character
+                        '</div>';
             cardHTML += '</div></div>';
 
             console.log("ItemID: " + item);
@@ -192,6 +200,27 @@ $(document).ready(function () {
 //            $('#newItemCreator').modal("hide");
         });
     }
+
+    $('[action="export-item-popup"]').on('click', function(){
+        console.log("Item to export:", $(this).attr('itemID'));
+        console.log("Creating export modal...");
+
+        var itemID = $(this).attr("itemID");
+        var itemName = itemStorage[itemID]['itemName'];
+
+        var modal = '<div class="modal" tabindex="-1" role="dialog" id="modal_' + itemID + '"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Export "' + itemName + '"</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p>Choose an app to export to:</p><button class="btn text-dark btn-info font-weight-bold" action="export-item" itemid="' + itemID + '">Complete Reference for DnD 5</button></div><div class="modal-footer"><button type="button" class="btn text-light btn-danger font-weight-bold" data-dismiss="modal">Cancel</button></div></div></div></div>'
+
+        console.log("Modal:\n", modal);
+
+        $("body").append(modal);
+
+        $('#modal_' + itemID).on('hidden.bs.modal', function(){
+            $(this).modal('dispose');
+            console.log("Modal Destroyed!");
+        })
+
+        $('#modal_' + itemID).modal("show");
+    });
 
     $('#createNewItem').on('click', function () {
         var itemCreationForm = $('#itemCreationForm').serializeArray();
@@ -236,7 +265,7 @@ $(document).ready(function () {
         var itemData = itemStorage[itemID];
         console.log("Editting", itemID)
         console.log("Data:\n", itemData);
-        $('#newItemCreator').modal();
+        $('#newItemCreator').modal("show");
         setShownFields(itemData["itemType"]);
 
         if(itemData["attument"]){
@@ -269,51 +298,53 @@ $(document).ready(function () {
             $('#theme-toggle-text').html("Toggle Dark Theme");
         }
     });
-});
 
-$('[action="get-item-image"]').on("click", function () {
-        var cardID = $(this).attr("itemid");
-        console.log('Get image for', cardID);
-        element = document.getElementById("cardID");
-
-        function filter(node) {
-            return (node.tagName != "a");
-        }
-
-        // html2canvas(element).then(function (canvas) {
-        //     canvas2img = canvas.toDataURL('image/png');
-        //     $(document).appendChild(canvas2img);
-        // })
-        domtoimage.toPng(element)
-            .then(function (dataUrl) {
-                console.log(dataUrl);
-                //window.open(dataUrl);
-                var img = new Image();
-                img.src = dataUrl;
-                document.getElementById("itemCards").appendChild(img);
-            })
-            .catch(function (error) {
-                console.error('oops, something went wrong!', error);
-            });
+    $('#newClassCreator').on('shown.bs.modal', function () {
+        $('#className').trigger('focus');
     });
 
-$('#newClassCreator').on('shown.bs.modal', function () {
-    $('#className').trigger('focus');
-});
-
-$('#newItemCreator').on('shown.bs.modal', function () {
-    $('#itemName').trigger('focus');
-});
-
-$('#createNewClass').on('click', function () {
-    var classCreationForm = $('#classCreationForm').serializeArray();
-    console.log(classCreationForm);
-
-    $.each($('input[name="saveproficiencies"]:checked'), function(){
-        console.log("Save:", $(this).val());
+    $('#newItemCreator').on('shown.bs.modal', function () {
+        $('#itemName').trigger('focus');
     });
 
-    $.each($('input[name="classskills"]:checked'), function(){
-        console.log("Skill:", $(this).val());
+    $('#createNewClass').on('click', function () {
+        var classCreationForm = $('#classCreationForm').serializeArray();
+        console.log(classCreationForm);
+
+        $.each($('input[name="saveproficiencies"]:checked'), function(){
+            console.log("Save:", $(this).val());
+        });
+
+        $.each($('input[name="classskills"]:checked'), function(){
+            console.log("Skill:", $(this).val());
+        });
     });
 });
+
+
+
+//$('[action="get-item-image"]').on("click", function () {
+//        var cardID = $(this).attr("itemid");
+//        console.log('Get image for', cardID);
+//        element = document.getElementById("cardID");
+//
+//        function filter(node) {
+//            return (node.tagName != "a");
+//        }
+//
+//        // html2canvas(element).then(function (canvas) {
+//        //     canvas2img = canvas.toDataURL('image/png');
+//        //     $(document).appendChild(canvas2img);
+//        // })
+//        domtoimage.toPng(element)
+//            .then(function (dataUrl) {
+//                console.log(dataUrl);
+//                //window.open(dataUrl);
+//                var img = new Image();
+//                img.src = dataUrl;
+//                document.getElementById("itemCards").appendChild(img);
+//            })
+//            .catch(function (error) {
+//                console.error('oops, something went wrong!', error);
+//            });
+//    });
