@@ -41,6 +41,11 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
     * ~~Able to toggle between light and dark themes~~ Done!
     * Keep track of the chosen theme between reloads
     * More themes (?)
+    
+## Known Bugs
+
+* If you edit an item and save your changes, you can no longer open the item editor
+* The export menu has no animation and opens rather jarringly
 
 ## Notice
 
