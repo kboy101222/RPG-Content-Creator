@@ -54,13 +54,13 @@ This project is Open Source and free to use, modify, and distribute, so long as 
 ## Update Log
 
 **Alpha 2**  
-    * Added bootstrap-darkly theme switch
+* Added bootstrap-darkly theme switch  
 **Alpha 2.1**  
-    * Removed bootstrap-darkly theme switch
-    * Added the first version of the custom "Magical Scroll Theme"
-    * Added "View this project on GitHub" link
+* Removed bootstrap-darkly theme switch  
+* Added the first version of the custom "Magical Scroll Theme"  
+* Added "View this project on GitHub" link  
 **Alpha 3 (Coming Soon)**  
-    * Added exporting to *Complete Reference for DnD 5*
+* Added exporting to *Complete Reference for DnD 5*  
     
 ## Notes on exporting to *Complete Reference for DnD 5*
 
