@@ -208,7 +208,7 @@ $(document).ready(function () {
         var itemID = $(this).attr("itemID");
         var itemName = itemStorage[itemID]['itemName'];
 
-        var modal = '<div class="modal" tabindex="-1" role="dialog" id="modal_' + itemID + '"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Export "' + itemName + '"</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p>Choose an app to export to:</p><button class="btn text-dark btn-info font-weight-bold" action="export-item" itemid="' + itemID + '">Complete Reference for DnD 5</button></div><div class="modal-footer"><button type="button" class="btn text-light btn-danger font-weight-bold" data-dismiss="modal">Cancel</button></div></div></div></div>'
+        var modal = '<div class="modal" tabindex="-1" role="dialog" id="modal_' + itemID + '"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Export "' + itemName + '"</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p>Choose an app to export to:</p><button class="btn text-dark btn-info font-weight-bold" action="export-item" itemid="' + itemID + '">Complete Reference for DnD 5</button></div><div class="modal-footer"><button type="button" class="btn text-light btn-info font-weight-bold" data-dismiss="modal">Cancel</button></div></div></div></div>'
 
         console.log("Modal:\n", modal);
 

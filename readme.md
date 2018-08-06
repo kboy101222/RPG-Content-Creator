@@ -51,6 +51,25 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
 
 This project is Open Source and free to use, modify, and distribute, so long as you give credit to me, Kyle George, and as long as you don't charge money for it.
 
+## Update Log
+
+**Alpha 2**
+    * Added bootstrap-darkly theme switch
+**Alpha 2.1**
+    * Removed bootstrap-darkly theme switch
+    * Added the first version of the custom "Magical Scroll Theme"
+    * Added "View this project on GitHub" link
+**Alpha 3 (Coming Soon)**
+    * Added exporting to *Complete Reference for DnD 5*
+    
+## Notes on exporting to *Complete Reference for DnD 5*
+
+In order to import the content into the app, you must upload it to the [Complete Reference Forums](https://complete-reference.com) and import it through the app.
+
+If the chosen ID number for the item conflicts with another ID, the previous item will be overwritten, so choose a long, random number.
+
+Both of these problems are unavoidable on my end, sorry.
+
 ## Additional Software Used:
 
 * Brackets (For coding)

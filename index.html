@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark text-danger bg-info">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NewCreationMenu" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,19 +28,11 @@
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#newItemCreator">New Item</a></li>
                 <li class="nav-item"><a href="#" data-toggle="modal" data-target="#newClassCreator" class="nav-link">New Class</a></li>
                 <li class="nav-item"><a href="#" class="nav-link disabled">New Archetype</a></li>
-                <li class="nav-item"><a href="" class="nav-link disabled">New Race</a></li>
-                <li class="nav-item"><a href="" class="nav-link disabled">New Sub Race</a></li>
+                <li class="nav-item"><a href="#" class="nav-link disabled">New Race</a></li>
+                <li class="nav-item"><a href="#" class="nav-link disabled">New Sub Race</a></li>
             </ul>
-            <ul class="navbar-nav font-weight-bold">
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <div class="form-check checkbox-slider-md checkbox-slider--default">
-                            <label for="toggle-theme">
-                                <input type="checkbox" id="toggle-theme"><span id="theme-toggle-text">Toggle Dark Theme</span>
-                            </label>
-                        </div>
-                    </a>
-                </li>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="https://github.com/kboy101222/RPG-Content-Creator">View source on GitHub</a></li>
             </ul>
         </div>
     </nav>
@@ -451,7 +443,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="attunementDesc">Attunement Description</label>
-                                    <input type="text" name="attunementDesc" class="form-control" id="attunementDesc" placeholder="Attunement Description">
+                                    <input type="text" name="attunementDesc" class="form-control" id="attunementDesc">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -464,21 +456,21 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="createNewItem">Save changes</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" id="createNewItem">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3 class="font-weight-bold">Items</h3><br>
+    <h3 class="section-title">Items</h3>
     <div class="card-columns" id="itemCards">
 
     </div>
 
-    <h3 class="font-weight-bold">Classes</h3><br>
+    <h3 class="section-title">Classes</h3>
     <div class="card-columns" id="classCards">
-
+        <h3>Coming Soon!</h3>
     </div>
 
     <!-- Optional JavaScript -->
