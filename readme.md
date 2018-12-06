@@ -46,7 +46,7 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
 
 * If you edit an item and save your changes, you can no longer open the item editor
 * The export menu has no animation and opens rather jarringly
-* A lot of the text is white on a white background
+* ~~A lot of the text is white on a white background~~
 
 ## Notice
 
