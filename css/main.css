@@ -11,11 +11,6 @@ body {
 /*    background-color: #A4825E !important;*/
 }
 
-.card {
-/*    background: #A4825E;*/
-/*    color: white;*/
-}
-
 .btn-info {
 /*    background-color: #C2AC80 !important;*/
     color: #000000 !important;
@@ -39,7 +34,7 @@ body {
 
 .modal-content {
 /*    background: #A4825E;*/
-    color: white;
+/*    color: white;*/
 }
 
 .form-control:enabled {
@@ -56,5 +51,5 @@ body {
 }
 
 #NewCreationMenu {
-    color: white !important;
+/*    color: white !important;*/
 }
