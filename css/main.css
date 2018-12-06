@@ -3,31 +3,31 @@
 }
 
 body {
-    background-color: #C2AC80;
+/*    background-color: #C2AC80;*/
     color: black !important;
 }
 
 .bg-info {
-    background-color: #A4825E !important;
+/*    background-color: #A4825E !important;*/
 }
 
 .card {
-    background: #A4825E;
+/*    background: #A4825E;*/
     color: white;
 }
 
 .btn-info {
-    background-color: #C2AC80 !important;
+/*    background-color: #C2AC80 !important;*/
     color: #000000 !important;
 }
 
 .btn-danger {
-    background-color: #856165;
+/*    background-color: #856165;*/
     color: black !important;
 }
 
 .card-columns {
-    border: 5px solid #856165;
+    border: 5px solid black;
     margin: 5px;
     padding: 3px;
 }
@@ -38,17 +38,17 @@ body {
 }
 
 .modal-content {
-    background: #A4825E;
+/*    background: #A4825E;*/
     color: white;
 }
 
 .form-control:enabled {
-    background: #C2AC80;
+/*    background: #C2AC80;*/
     color: black;
 }
 
 .form-control:disabled {
-    background: #856165;
+/*    background: #856165;*/
 }
 
 .text-muted {
