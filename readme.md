@@ -46,6 +46,7 @@ For D&D 5e, Classes, Archetypes, Races, and Sub Races will all be exportable int
 
 * If you edit an item and save your changes, you can no longer open the item editor
 * The export menu has no animation and opens rather jarringly
+* A lot of the text is white on a white background
 
 ## Notice
 
@@ -58,8 +59,11 @@ This project is Open Source and free to use, modify, and distribute, so long as 
 
 **Alpha 2.1**  
 * Removed bootstrap-darkly theme switch  
-* Added the first version of the custom "Magical Scroll Theme"  
+* ~~Added the first version of the custom "Magical Scroll Theme"~~
 * Added "View this project on GitHub" link  
+
+**Alpha 2.1.1**  
+* Removed the "Magic Scroll" Theme because it was bad...
 
 **Alpha 3 (Coming Soon)**  
 * Added exporting to *Complete Reference for DnD 5*  
